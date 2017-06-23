@@ -16,7 +16,7 @@ def greatestCommonDivisor(a,b):
 def leastCommonMultiple(a,b):
     return (a * b) / (greatestCommonDivisor(a,b))
 
-if len(sys.argv) < 3:
+if len(sys.argv) < 2:
     print("Usage: ./LCM.py <int-1> <int-2> (<int-3> ....)")
 else:
     if not is_intstring(sys.argv[1]) or int(sys.argv[1]) < 0:
@@ -30,4 +30,4 @@ else:
             else:
                 lcm = leastCommonMultiple(lcm, int(sys.argv[index]))
         else:
-            print("Least common multiple of {} is {}".format(sys.argv[1:len(sys.argv)], lcm))
+            print("Least common multiple of \"{}\" is {}".format(" ".join(sys.argv[1:len(sys.argv)]), lcm))
